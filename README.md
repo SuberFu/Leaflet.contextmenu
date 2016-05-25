@@ -1,6 +1,6 @@
 #Leaflet.contextmenu
 ====================
-A context menu for Leaflet. See the [demo](http://aratcliffe.github.io/Leaflet.contextmenu/examples/index.html).
+A context menu for Leaflet forked from aratcliffe. Example pages changed to my own to do testing. See the [demo](http://suberfu.github.io/Leaflet.contextmenu/examples/index.html).
 
 ##Usage
 The context menu is implemented as a map interaction handler.  To use the plugin include the script and enable using the map `contextmenu` option.
