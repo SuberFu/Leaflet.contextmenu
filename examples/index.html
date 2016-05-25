@@ -42,15 +42,23 @@
 	      }, {
 		      text: 'Center map here',
 		      callback: centerMap
-	      }, '-', {
-		      text: 'Zoom in',
-		      icon: 'images/zoom-in.png',
-		      callback: zoomIn
-	      }, {
-		      text: 'Zoom out',
-		      icon: 'images/zoom-out.png',
-		      callback: zoomOut
-	      }]     
+	      }, 
+	      '-', 
+	      {
+          text: 'Zoom',
+          icon: 'images/zoom-in.png',
+          callback: null,
+          items: [{
+          		      text: 'Zoom in',
+          		      icon: 'images/zoom-in.png',
+          		      callback: zoomIn
+          	      }, {
+          		      text: 'Zoom out',
+          		      icon: 'images/zoom-out.png',
+          		      callback: zoomOut
+          	      }]
+	      }
+	      ]     
       });
 
 	  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
