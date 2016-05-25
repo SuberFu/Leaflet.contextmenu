@@ -217,7 +217,7 @@ L.Map.ContextMenu = L.Handler.extend({
 	_removeItem: function (id) {
 		var item,
 		    el,
-		    i, l;
+		    i, l, callback;
 
 		for (i = 0, l = this._items.length; i < l; i++) {
 			item = this._items[i];
@@ -231,7 +231,7 @@ L.Map.ContextMenu = L.Handler.extend({
 						.off(el, 'mouseover', this._onItemMouseOver, this)
 						.off(el, 'mouseover', this._onItemMouseOut, this)
 						.off(el, 'mousedown', L.DomEvent.stopPropagation)
-						.off(el, 'click', item.callback);				
+						.off(el, 'click', callback);
 				}
 				
 				this._container.removeChild(el);
@@ -317,6 +317,10 @@ L.Map.ContextMenu = L.Handler.extend({
 				layerPoint: layerPoint,
 				containerPoint: pt
 			};
+
+			if(data && data.relatedTarget){
+				this._showLocation.relatedTarget = data.relatedTarget;
+			}
 
 			this._setPosition(pt);			
 

@@ -1,6 +1,6 @@
 #Leaflet.contextmenu
 ====================
-A context menu for Leaflet. See the [demo](http://aratcliffe.github.io/Leaflet.contextmenu/examples/index.html).
+A context menu for Leaflet forked from aratcliffe. Example pages changed to my own to do testing. See the [demo](http://suberfu.github.io/Leaflet.contextmenu/examples/index.html).
 
 ##Usage
 The context menu is implemented as a map interaction handler.  To use the plugin include the script and enable using the map `contextmenu` option.
@@ -25,6 +25,23 @@ var map = L.map('map', {
 	    callback: zoomOut
 	}]
 });    
+
+
+function showCoordinates (e) {
+	alert(e.latlng);
+}
+
+function centerMap (e) {
+	map.panTo(e.latlng);
+}
+
+function zoomIn (e) {
+	map.zoomIn();
+}
+
+function zoomOut (e) {
+	map.zoomOut();
+}
 ````
 
 The context menu mixin allows markers and vector features to extend the map context menu with their own menu items. In addition to the menu item options available for the map context menu marker's also accept an `index` option that specifies where the menu item should be inserted relative to the existing map menu items.
